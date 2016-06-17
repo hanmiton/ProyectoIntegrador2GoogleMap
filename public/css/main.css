@@ -126,20 +126,34 @@ body {
 }
 
 .ingeniero {
-  padding: 20px;
-  margin-bottom: 10px;
-  border: solid 1px #D9230F;
-  border-radius: 20px;
+  height: 350px;
 }
 
-.ingeniero:hover {
-  border: solid 3px #D9230F;
+.ingeniero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.ingeniero h1 > small {
+  color: #ccc;
 }
 
 .ingeniero img {
-  width: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 200px;
+  max-height: 220px;
 }
 
+.ingeniero .panel-body {
+  position: relative;
+  height: 250px;
+}
 
 .ingeniero ingeniero-type {
   font-size: 22px;

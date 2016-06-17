@@ -3,13 +3,23 @@
     <h1>Ingenieros <small class="pull-right">Mostrando <span class="badge">{{ingenieros.length}}</span> Ingenieros</small></h1>
     <h2 ng-if="type"><span class="label type-{{type | lowercase}}">{{type}}</span></h2>
   </div>
-  <div class="ingeniero" ng-repeat="ingeniero in ingenieros">
-    <a href="/#ingeniero/{{ingeniero.name | normalize}}">
-      <ingeniero-name></ingeniero-name>
-      <ingeniero-image></ingeniero-image>
-      <div class="text-center">
-        <ingeniero-type></ingeniero-type>
-      </div>
-    </a>
-  </div>
+	<div class="row" ng-repeat="group in groupped">
+	    <div class="col-lg-3" ng-repeat="ingeniero in group">
+	      <div class="ingeniero panel panel-primary">
+	        <div class="panel-heading">
+	          <ingeniero-name></ingeniero-name>
+	        </div>
+	        <div class="panel-body">
+	          <a href="/#ingeniero/{{ingeniero.name | normalize}}">
+	            <ingeniero-image></ingeniero-image>
+	          </a>
+	        </div>
+	        <div class="panel-footer">
+	          <div class="text-center">
+	            <ingeniero-type></ingeniero-type>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
 </div>
