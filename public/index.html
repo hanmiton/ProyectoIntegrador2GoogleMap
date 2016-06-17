@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="Ingedex" >
+<html ng-app="ingedex" >
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
     </head>
     <body ng-controller="MapCtrl">
-       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"> 
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"> 
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -40,15 +40,15 @@
           <div class="col-md-6">
             <img class="avatar center-block" ng-src="img/ingenieros/{{ingCtrl.ingeniero.name | lowercase}}.png">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" ng-controller="TabsController as tabs">
             <ul class="nav nav-tabs nav-justified">
-              <li ng-class="{ active:ingCtrl.tab === 1 }"><a href="#" ng-click="ingCtrl.selectTab(1)">Ingenierias</a></li>
-              <li ng-class="{ active:ingCtrl.tab === 2 }"><a href="#" ng-click="ingCtrl.selectTab(2)">Estadisticas</a></li>
-              <li ng-class="{ active:ingCtrl.tab === 3 }"><a href="#" ng-click="ingCtrl.selectTab(3)">Evolución</a></li>
+               <li ng-class="{ active:tabs.tab === 1 }"><a href="#" ng-click="tabs.selectTab(1)">Ingenierias</a></li>
+              <li ng-class="{ active:tabs.tab === 2 }"><a href="#" ng-click="tabs.selectTab(2)">Estadisticas</a></li>
+              <li ng-class="{ active:tabs.tab === 3 }"><a href="#" ng-click="tabs.selectTab(3)">Evolucion</a></li>
             </ul>
             <div class="tab-content">
-                <!-- Ingenierias -->
-              <div ng-show="ingCtrl.tab === 1">
+              <!-- Ingenierias -->
+              <div ng-show="tabs.tab === 1">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <strong>Tipo</strong>
@@ -68,7 +68,7 @@
                   </li>
                   <li class="list-group-item">
                     <strong>Habilidades</strong>
-                    <ul>
+                      <ul>
                         <li ng-repeat="ability in ingCtrl.ingeniero.habilidades">
                           {{ability}}
                         </li>
@@ -78,7 +78,7 @@
               </div>
               <!--Estadisticas-->
               <!-- Stats -->
-             <div ng-show="ingCtrl.tab === 2">
+              <div ng-show="tabs.tab === 2">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <strong>Estadistica1</strong>
@@ -111,7 +111,7 @@
                 </ul>
               </div>
                <!-- Evolucion -->
-              <div ng-show="ingCtrl.tab === 3">
+              <div ng-show="tabs.tab === 3">
                 <div class="text-center" ng-repeat="ingeniero in ingCtrl.ingeniero.evolution">
                   <a href="#">
                     <img src="img/ingenieros/{{ingeniero | lowercase}}.jpg" width="160">

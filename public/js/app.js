@@ -1,4 +1,5 @@
-var app = angular.module('Ingedex', ['google-maps']);
+(function () {
+var app = angular.module('ingedex', ['google-maps']);
 
 app.controller('IngenieroController', function () {
     this.ingeniero = {
@@ -20,9 +21,16 @@ app.controller('IngenieroController', function () {
       },
       evolution: [ "Ingeniero", "Masterado", "Doctorado" ]
     };
+
+  });
+
+app.controller('TabsController', function () {
+    this.tab = 1;
+
     this.selectTab = function (tab) {
       this.tab = tab;
     };
+
   });
 
 app.factory('MarkerCreatorService', function () {
@@ -138,3 +146,4 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCre
     }]);
 
 
+})();
