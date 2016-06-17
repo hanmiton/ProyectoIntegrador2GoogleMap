@@ -15,7 +15,7 @@ var app = angular.module('ingedex', [
         templateUrl: 'views/ingedex.html',
         controller: 'IngedexController'
       })
-      .when('/ingeniero/:id', {
+      .when('/ingeniero/:name', {
         templateUrl: 'views/ingeniero.html',
         controller: 'IngenieroController',
       })
