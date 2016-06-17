@@ -47,10 +47,11 @@ app.controller('SolicitudesController', function () {
       }
     };
 
-     this.addSolicitud = function () {
+    this.addSolicitud = function () {
+      this.solicitud.date = Date.now();
       this.solicitudes.push(this.solicitud);
+      this.solicitud = {};
     };
-
 
   });
 app.filter('imageify', function () {
