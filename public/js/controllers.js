@@ -110,14 +110,6 @@
 
         $scope.map.markers.push($scope.autentiaMarker);
 
-        $scope.addCurrentLocation = function () {
-            MarkerCreatorService.createByCurrentLocation(function (marker) {
-                marker.options.labelContent = 'You´re here';
-                $scope.map.markers.push(marker);
-                refresh(marker);
-            });
-        };
-        
         $scope.addAddress = function() {
             var address = $scope.address;
             if (address !== '') {
