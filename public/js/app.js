@@ -9,9 +9,9 @@ var app = angular.module('ingedex', [
 
      app.config(['$routeProvider', function ($routeProvider) {
 
-     $routeProvider
+    $routeProvider
       .when('/', {
-        templateUrl: 'views/ingeniero.html',
+        templateUrl: 'views/ingedex.html',
         controller: 'IngedexController'
       })
       .when('/ingeniero/:id', {

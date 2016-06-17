@@ -2,4 +2,8 @@
   <div class="page-header">
     <h1>Ingenierias</h1>
   </div>
+  <div ng-repeat="ingeniero in ingenieros">
+    <h1>{{ingeniero.name}} <small>{{ingeniero.species}}</small></h1>
+    <img ng-src="{{ingeniero.name | imageify}}">
+  </div>
 </div>
