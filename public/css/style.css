@@ -6,6 +6,14 @@ html, body, div.map_container {
     background: #fafafa;
 }
 
+.map {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family: comic Sans MS, verdana, sans-serif;
+    background: #fafafa;
+}
+
 div.map_container {
     position: relative;
     float: left;
