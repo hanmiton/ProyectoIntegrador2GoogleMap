@@ -2,9 +2,10 @@
   <div class="page-header">
     <h1>Ingenierias</h1>
   </div>
-  <div ng-repeat="ingeniero in ingenieros">
-    <div ng-repeat="ingeniero in ingenieros">
-    <ingeniero-name></ingeniero-name>
-    <ingeniero-image></ingeniero-image>
+  <div class="ingeniero" ng-repeat="ingeniero in ingenieros">
+    <a href="/#ingeniero/{{ingeniero.name | normalize}}">
+      <ingeniero-name></ingeniero-name>
+      <ingeniero-image></ingeniero-image>
+    </a>
   </div>
 </div>

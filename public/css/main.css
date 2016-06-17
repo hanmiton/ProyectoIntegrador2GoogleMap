@@ -19,7 +19,6 @@ body {
   margin-bottom: 10px;
 }
 
-
 .form-group {
   padding: 10px;
 }
@@ -124,4 +123,19 @@ body {
 
 .ng-valid.ng-dirty {
   border-color: #468847;
+}
+
+.ingeniero {
+  padding: 20px;
+  margin-bottom: 10px;
+  border: solid 1px #D9230F;
+  border-radius: 20px;
+}
+
+.ingeniero:hover {
+  border: solid 3px #D9230F;
+}
+
+.ingeniero img {
+  width: 300px;
 }
