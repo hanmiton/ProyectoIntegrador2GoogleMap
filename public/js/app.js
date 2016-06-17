@@ -47,6 +47,11 @@ app.controller('SolicitudesController', function () {
       }
     };
 
+     this.addSolicitud = function () {
+      this.solicitudes.push(this.solicitud);
+    };
+
+
   });
 app.filter('imageify', function () {
     return function (input) {
