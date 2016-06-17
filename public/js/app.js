@@ -24,7 +24,7 @@ app.controller('IngenieroController', function () {
 
   });
 
-app.controller('TabsController', function () {
+  app.controller('TabsController', function () {
     this.tab = 1;
 
     this.selectTab = function (tab) {
@@ -32,7 +32,8 @@ app.controller('TabsController', function () {
     };
 
   });
-app.controller('SolicitudesController', function () {
+
+  app.controller('SolicitudesController', function () {
     this.solicitudes = [];
     this.solicitud = {};
     this.show = false;
@@ -54,11 +55,18 @@ app.controller('SolicitudesController', function () {
     };
 
   });
-app.filter('imageify', function () {
+  app.filter('imageify', function () {
     return function (input) {
       var url = "img/ingenieros/" + input.toLowerCase() + ".jpg";
       return url;
     };
+  });
+
+  app.directive('ingenieroData', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'partials/ingeniero-data.html'
+    }
   });
 app.factory('MarkerCreatorService', function () {
 
