@@ -20,6 +20,9 @@ app.controller('IngenieroController', function () {
       },
       evolution: [ "Ingeniero", "Masterado", "Doctorado" ]
     };
+    this.selectTab = function (tab) {
+      this.tab = tab;
+    };
   });
 
 app.factory('MarkerCreatorService', function () {

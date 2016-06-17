@@ -42,13 +42,13 @@
           </div>
           <div class="col-md-6">
             <ul class="nav nav-tabs nav-justified">
-              <li class="active"><a href="#">Ingenierias</a></li>
-              <li><a href="#">Estadísticas</a></li>
-              <li><a href="#">Evolución</a></li>
+              <li ng-class="{ active:ingCtrl.tab === 1 }"><a href="#" ng-click="ingCtrl.selectTab(1)">Ingenierias</a></li>
+              <li ng-class="{ active:ingCtrl.tab === 2 }"><a href="#" ng-click="ingCtrl.selectTab(2)">Estadisticas</a></li>
+              <li ng-class="{ active:ingCtrl.tab === 3 }"><a href="#" ng-click="ingCtrl.selectTab(3)">Evolución</a></li>
             </ul>
             <div class="tab-content">
                 <!-- Ingenierias -->
-              <div>
+              <div ng-show="ingCtrl.tab === 1">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <strong>Tipo</strong>
@@ -78,7 +78,7 @@
               </div>
               <!--Estadisticas-->
               <!-- Stats -->
-              <div>
+             <div ng-show="ingCtrl.tab === 2">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <strong>Estadistica1</strong>
@@ -111,7 +111,7 @@
                 </ul>
               </div>
                <!-- Evolucion -->
-              <div>
+              <div ng-show="ingCtrl.tab === 3">
                 <div class="text-center" ng-repeat="ingeniero in ingCtrl.ingeniero.evolution">
                   <a href="#">
                     <img src="img/ingenieros/{{ingeniero | lowercase}}.jpg" width="160">
