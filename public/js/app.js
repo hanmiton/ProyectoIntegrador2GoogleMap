@@ -32,7 +32,12 @@ app.controller('TabsController', function () {
     };
 
   });
-
+app.filter('imageify', function () {
+    return function (input) {
+      var url = "img/ingenieros/" + input.toLowerCase() + ".jpg";
+      return url;
+    };
+  });
 app.factory('MarkerCreatorService', function () {
 
     var markerId = 0;
