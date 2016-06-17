@@ -62,12 +62,41 @@ app.controller('IngenieroController', function () {
     };
   });
 
+  app.directive('ingenieroName', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'partials/ingeniero-name.html'
+    };
+  });
+
+  app.directive('ingenieroImage', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'partials/ingeniero-image.html'
+    };
+  });
+
   app.directive('ingenieroData', function () {
     return {
       restrict: 'E',
       templateUrl: 'partials/ingeniero-data.html'
-    }
+    };
   });
+
+   app.directive('ingenieroStats', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'partials/ingeniero-stats.html'
+    };
+  });
+
+   app.directive('ingenieroEvolution', function () {
+    return {
+      retrict: 'E',
+      templateUrl: 'partials/ingeniero-evolution.html'
+    };
+  });
+
 app.factory('MarkerCreatorService', function () {
 
     var markerId = 0;
