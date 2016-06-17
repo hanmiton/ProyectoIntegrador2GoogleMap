@@ -1,11 +1,14 @@
 <div>
   <div class="page-header">
-    <h1>Ingenierias</h1>
+    <h1>Ingenieros <small class="pull-right">Mostrando <span class="badge">{{ingenieros.length}}</span> Ingenieros</small></h1>
   </div>
   <div class="ingeniero" ng-repeat="ingeniero in ingenieros">
     <a href="/#ingeniero/{{ingeniero.name | normalize}}">
       <ingeniero-name></ingeniero-name>
       <ingeniero-image></ingeniero-image>
+      <div class="text-center">
+        <ingeniero-type></ingeniero-type>
+      </div>
     </a>
   </div>
 </div>
