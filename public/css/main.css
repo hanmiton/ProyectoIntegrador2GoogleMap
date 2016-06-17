@@ -139,3 +139,8 @@ body {
 .ingeniero img {
   width: 300px;
 }
+
+
+.ingeniero ingeniero-type {
+  font-size: 22px;
+}

@@ -37,6 +37,13 @@
         };
       })
 
+    .directive('ingenieroType', function () {
+      return {
+        restrict: 'E',
+        templateUrl: 'partials/ingeniero-type.html'
+      };
+    })
+
      .directive('ingenieroSolicitudes', function () {
         return {
           restrict: 'E',
