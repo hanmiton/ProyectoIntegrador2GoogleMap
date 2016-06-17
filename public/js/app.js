@@ -11,7 +11,8 @@ var app = angular.module('ingedex', [
 
      $routeProvider
       .when('/', {
-        templateUrl: 'views/ingeniero.html'
+        templateUrl: 'views/ingeniero.html',
+        controller: 'IngedexController'
       })
       .when('/ingeniero/:id', {
         templateUrl: 'views/ingeniero.html',
