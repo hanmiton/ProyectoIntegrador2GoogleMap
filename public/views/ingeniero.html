@@ -1,0 +1,62 @@
+<!-- ingeniero -->
+      <div ng-controller="IngenieroController as ingCtrl">
+        <div class="page-header">
+          <ingeniero-name></ingeniero-name>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <ingeniero-image></ingeniero-image>
+          </div>
+          <!-- Tabs -->
+          <div class="col-md-6" ng-controller="TabsController as tabs">
+            <ul class="nav nav-tabs nav-justified">
+               <li ng-class="{ active:tabs.tab === 1 }"><a href="#" ng-click="tabs.selectTab(1)">Ingenierias</a></li>
+              <li ng-class="{ active:tabs.tab === 2 }"><a href="#" ng-click="tabs.selectTab(2)">Estadisticas</a></li>
+              <li ng-class="{ active:tabs.tab === 3 }"><a href="#" ng-click="tabs.selectTab(3)">Evolucion</a></li>
+            </ul>
+            <div class="tab-content">
+              <!-- Ingenierias -->
+              <div ng-show="tabs.tab === 1">
+                <ingeniero-data></ingeniero-data>
+              </div>
+              <!--Estadisticas-->
+              <!-- Stats -->
+              <div ng-show="tabs.tab === 2">
+                <ingeniero-stats></ingeniero-stats>
+              </div>
+               <!-- Evolucion -->
+              <div ng-show="tabs.tab === 3">
+                <ingeniero-evolution></ingeniero-evolution>
+              </div>
+            </div>
+          </div>
+          <!-- /tabs -->
+        </div>
+        <!-- solicitudes -->
+        <ingeniero-solicitudes></ingeniero-solicitudes>
+          <!-- /solicitud -->
+      </div>
+      <!-- /ingeniero -->
+      
+        <div class="map_container" >
+            <google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options" control="map.control">
+                <markers models="map.markers" coords="'self'" options="'options'" isLabel='true'>
+                </markers>
+            </google-map>
+        </div>  
+        <div class="controls">
+
+            <h3>Current location</h3>
+            <p>
+                <button ng-click="addCurrentLocation()">Current location</button>                
+            </p>
+            <h3>Address search</h3>
+            <p>
+                <input type="text" placeholder="Address. i.e: Concha Espina 1, Madrid" ng-model="address" style="width: 210px"/>
+                <button ng-click="addAddress()">Look up!</button>    
+            </p>
+            <p>
+                <a href="http://kcy.me/1bbra" target="_blank">Source Code</a>
+            </p>
+        </div>
+        <!-- Google Maps -->
