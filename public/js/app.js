@@ -4,10 +4,11 @@ var app = angular.module('ingedex', [
     'ngRoute',
     'ingedex.controllers',
     'ingedex.directives',
-    'ingedex.filters'
+    'ingedex.filters',
+    'ingedex.services'
     ]);
 
-     app.config(['$routeProvider', function ($routeProvider) {
+    app.config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
       .when('/', {
@@ -23,4 +24,5 @@ var app = angular.module('ingedex', [
       });
 
   }]);
+
 })();

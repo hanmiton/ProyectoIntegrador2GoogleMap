@@ -1,13 +1,10 @@
 (function () {
 
   angular.module('ingedex.controllers', [])
-     .controller('IngedexController', ['$scope', '$http', function ($scope, $http) {
-      $scope.ingenieros = [];
-
-      $http.get('/ingenieros.json')
-        .success(function (data) {
-          $scope.ingenieros = data;
-        });
+     .controller('IngedexController', ['$scope', 'ingenieroService', function ($scope, ingenieroService) {
+      ingenieroService.all().then(function (data) {
+        $scope.ingenieros = data;
+      });
     }])
 
     .controller('IngenieroController', ['$scope', function ($scope) {
