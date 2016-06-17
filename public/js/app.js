@@ -1,7 +1,7 @@
 (function () {
 var app = angular.module('ingedex', [
     'google-maps',
-    'ngRoute',
+     'ngRoute',
     'ingedex.controllers',
     'ingedex.directives',
     'ingedex.filters',
@@ -12,6 +12,10 @@ var app = angular.module('ingedex', [
 
     $routeProvider
       .when('/', {
+        templateUrl: 'views/ingedex.html',
+        controller: 'IngedexController'
+      })
+       .when('/:type', {
         templateUrl: 'views/ingedex.html',
         controller: 'IngedexController'
       })
