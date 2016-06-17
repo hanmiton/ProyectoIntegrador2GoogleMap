@@ -9,8 +9,9 @@
           $scope.ingenieros = data;
         });
     }])
-    .controller('IngenieroController', function () {
-      this.ingeniero = {
+
+    .controller('IngenieroController', ['$scope', function ($scope) {
+      $scope.ingeniero = {
         id: "001",
         name: "Nombre001",
         ingenieria: "Ingenieria001",
@@ -30,7 +31,8 @@
         evolution: [ "Ingeniero", "Masterado", "Doctorado" ]
       };
 
-    })
+    }])
+
     .controller('TabsController', function () {
       this.tab = 1;
 

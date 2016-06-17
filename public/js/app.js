@@ -17,7 +17,6 @@ var app = angular.module('ingedex', [
       .when('/ingeniero/:id', {
         templateUrl: 'views/ingeniero.html',
         controller: 'IngenieroController',
-        controllerAs: 'ingCtrl'
       })
       .otherwise({
         redirectTo: '/'
