@@ -34,10 +34,17 @@ app.controller('TabsController', function () {
   });
 app.controller('SolicitudesController', function () {
     this.solicitudes = [];
+    this.solicitud = {};
     this.show = false;
 
     this.toggle = function () {
       this.show = !this.show;
+    };
+
+    this.anonymousChanged = function () {
+      if (this.solicitud.anonymous) {
+        this.solicitud.email = "";
+      }
     };
 
   });
