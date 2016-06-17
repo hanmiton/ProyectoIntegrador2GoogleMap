@@ -20,6 +20,10 @@ body {
 }
 
 
+.form-group {
+  padding: 10px;
+}
+
 .type {
   margin-left: 1px;
 }
