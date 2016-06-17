@@ -32,6 +32,15 @@ app.controller('TabsController', function () {
     };
 
   });
+app.controller('SolicitudesController', function () {
+    this.solicitudes = [];
+    this.show = false;
+
+    this.toggle = function () {
+      this.show = !this.show;
+    };
+
+  });
 app.filter('imageify', function () {
     return function (input) {
       var url = "img/ingenieros/" + input.toLowerCase() + ".jpg";
