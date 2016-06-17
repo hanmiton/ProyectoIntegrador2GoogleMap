@@ -23,7 +23,15 @@
       };
 
     })
+    .controller('TabsController', function () {
+      this.tab = 1;
 
+      this.selectTab = function (tab) {
+        this.tab = tab;
+    };
+
+  })
+    
     .factory('MarkerCreatorService', function () {
 
     var markerId = 0;
@@ -88,19 +96,19 @@
 })
 .controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCreatorService, $scope) {
 
-        MarkerCreatorService.createByCoords(40.454018, -3.509205, function (marker) {
-            marker.options.labelContent = 'Autentia';
-            $scope.autentiaMarker = marker;
+         MarkerCreatorService.createByCoords(-0.2006319, -78.5040844, function (marker) {
+            marker.options.labelContent = 'Universidad Central Del Ecuador';
+            $scope.ecuadorMarker = marker;
         });
-        
+
         $scope.address = '';
 
         $scope.map = {
             center: {
-                latitude: $scope.autentiaMarker.latitude,
-                longitude: $scope.autentiaMarker.longitude
+                latitude: $scope.ecuadorMarker.latitude,
+                longitude: $scope.ecuadorMarker.longitude
             },
-            zoom: 12,
+            zoom:9,
             markers: [],
             control: {},
             options: {
@@ -108,8 +116,9 @@
             }
         };
 
-        $scope.map.markers.push($scope.autentiaMarker);
+        $scope.map.markers.push($scope.ecuadorMarker);
 
+       
         $scope.addAddress = function() {
             var address = $scope.address;
             if (address !== '') {
@@ -125,17 +134,9 @@
                 longitude: marker.longitude});
         }
 
-    }])
+    }]);
 
-    .controller('TabsController', function () {
-      this.tab = 1;
-
-      this.selectTab = function (tab) {
-        this.tab = tab;
-    };
-
-  });
-
+    
 
 
 
