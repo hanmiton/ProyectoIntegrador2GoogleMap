@@ -44,33 +44,45 @@
       };
     })
 
-     .directive('ingenieroSolicitudes', function () {
-        return {
-          restrict: 'E',
-          templateUrl: 'partials/ingeniero-solicitudes.html',
-          controller: function () {
-             this.solicitudes = [];
-              this.solicitud = {};
-              this.show = false;
+     .directive('ingenieroSolicitudes', ['ingenieroService', function (ingenieroService) {
+      return {
+        restrict: 'E',
+        templateUrl: 'partials/ingeniero-solicitudes.html',
+        scope: {
+          name: '@name'
+        },
+        link: function (scope, element, attributes) {
+          attributes.$observe('name', function (value) {
+            if (value) {
+              scope.name = value;
+              scope.solicitudes = ingenieroService.getSolicitudes(value);
+            }
+          });
+        },
+        controller: function ($scope) {
+          $scope.solicitudes = ingenieroService.getSolicitudes($scope.name);
+          $scope.solicitud = {};
+          $scope.show = false;
 
-              this.toggle = function () {
-                this.show = !this.show;
-              };
+          $scope.toggle = function () {
+            $scope.show = !$scope.show;
+          };
 
-              this.anonymousChanged = function () {
-                if (this.solicitud.anonymous) {
-                  this.solicitud.email = "";
-                }
-              };
+          $scope.anonymousChanged = function () {
+            if ($scope.solicitud.anonymous) {
+              $scope.solicitud.email = "";
+            }
+          };
 
-              this.addSolicitud = function () {
-                this.solicitud.date = Date.now();
-                this.solicitudes.push(this.solicitud);
-                this.solicitud = {};
-            };
-          },
-          controllerAs: 'sltsCtrl'
-        };
-      });
+          $scope.addSolicitud = function () {
+            $scope.solicitud.date = Date.now();
+            ingenieroService.saveSolicitud($scope.name, $scope.solicitud);
+            $scope.solicitudes = ingenieroService.getSolicitudes($scope.name);
+            $scope.solicitud = {};
+          };
+
+        }
+      };
+    }]);
 
 })();

@@ -55,7 +55,7 @@
       }
 
       function saveSolicitud(ingeniero, solicitud) {
-        var solicitudes = getsolicitudes(ingeniero);
+        var solicitudes = getSolicitudes(ingeniero);
 
         solicitudes.push(solicitud);
         localStorage.setItem(ingeniero, JSON.stringify(solicitudes));
@@ -73,13 +73,13 @@
         return solicitudes;
       }
 
+
       return {
         all: all,
         byName: byName,
         byType: byType,
         saveSolicitud: saveSolicitud,
         getSolicitudes: getSolicitudes
-
       };
 
     }]);
