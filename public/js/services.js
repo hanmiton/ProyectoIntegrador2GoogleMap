@@ -2,8 +2,9 @@
 
   angular.module('ingedex.services', [])
 
-    .factory('ingenieroService', ['$http', '$q', '$filter', function ($http, $q, $filter) {
+    .factory('ingenieroService', ['$http', '$q', '$filter', '$window', function ($http, $q, $filter, $window) {
       var normalize = $filter('normalize');
+      var localStorage = $window.localStorage;
 
       function all() {
         var deferred = $q.defer();
@@ -53,10 +54,32 @@
         return deferred.promise;
       }
 
+      function saveSolicitud(ingeniero, solicitud) {
+        var solicitudes = getsolicitudes(ingeniero);
+
+        solicitudes.push(solicitud);
+        localStorage.setItem(ingeniero, JSON.stringify(solicitudes));
+      }
+
+      function getSolicitudes(ingeniero) {
+        var solicitudes = localStorage.getItem(ingeniero);
+
+        if (!solicitudes) {
+          solicitudes = [];
+        } else {
+          solicitudes = JSON.parse(solicitudes);
+        }
+
+        return solicitudes;
+      }
+
       return {
         all: all,
         byName: byName,
-        byType: byType
+        byType: byType,
+        saveSolicitud: saveSolicitud,
+        getSolicitudes: getSolicitudes
+
       };
 
     }]);
