@@ -5,7 +5,7 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <div ng-controller="MapCtrl" class="map" style="
+            <div ng-controller="MapCtrl" class="avatar center-block"style="
     height: 500px">
         <div class="map_container" >
             <google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options" control="map.control">
@@ -13,15 +13,8 @@
                 </markers>
             </google-map>
         </div>  
-        <div class="controls">
-            <h3>Buscar Dirección</h3>
-            <p>
-                <input type="text" placeholder="Universidad Central del Ecuador" ng-model="address" style="width: 210px">
-                <button ng-click="addAddress()">Look up!</button>    
-            </p>
-        </div>
     </div>
-          <!--  <ingeniero-image></ingeniero-image>-->
+         <!--<ingeniero-image></ingeniero-image>-->
           </div>
           <!-- Tabs -->
           <div class="col-md-6" ng-controller="TabsController as tabs">

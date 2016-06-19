@@ -1,7 +1,36 @@
 [
   {
+    "id": "010",
+    "name": "Verguita",
+    "ingenieria": "Talento Humano",
+    "type": [
+      "Tipo1",
+      "Tipo2"
+    ],
+    "edad": "2′4″ (0.71m)",
+    "facultad": "facultad001",
+    "abilities": [
+      "habilidad1",
+      "habilidad2"
+    ],
+    "stats": {
+      "st1": 45,
+      "st2": 49,
+      "st3": 49,
+      "sp.st4": 65,
+      "sp.st5": 65,
+      "st6": 45,
+      "total": 318
+    },
+    "evolution": [
+      "Ingeniero",
+      "Doctorado",
+            "Masterado"
+    ]
+  },
+  {
     "id": "001",
-    "name": "Universidad Central del Ecuador Quito Ecuador",
+    "name": "Ingeniero000001",
     "ingenieria": "Ingenieria001",
     "type": [
       "Tipo1",
@@ -30,7 +59,7 @@
   },
   {
     "id": "002",
-    "name": "La Magdalena Quito Ecuador",
+    "name": "Ingeniero000002",
     "ingenieria": "Ingenieria001",
     "type": [
       "Tipo1",
@@ -59,7 +88,7 @@
   },
   {
     "id": "003",
-    "name": "12 de octubre y teniente ortiz",
+    "name": "Ingeniero000003",
     "ingenieria": "Ingenieria001",
     "type": [
       "Tipo1",
