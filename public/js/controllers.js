@@ -107,19 +107,17 @@
     };
 
 })
-.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCreatorService, $scope) {
+.controller('MapCtrl', ['MarkerCreatorService', '$routeParams', '$scope', function (MarkerCreatorService, $routeParams, $scope) {
+        var name2 = $routeParams.name;
+         $scope.address = name2;
+         console.log($scope.address);
 
-         MarkerCreatorService.createByCoords(-0.2006319, -78.5040844, function (marker) {
-            marker.options.labelContent = 'Universidad Central Del Ecuador';
-            $scope.ecuadorMarker = marker;
-        });
 
-        $scope.address = '';
-
+          
         $scope.map = {
             center: {
-                latitude: $scope.ecuadorMarker.latitude,
-                longitude: $scope.ecuadorMarker.longitude
+                latitude: -0.2006319,
+                longitude: -78.5040844
             },
             zoom:9,
             markers: [],
@@ -129,9 +127,12 @@
             }
         };
 
-        $scope.map.markers.push($scope.ecuadorMarker);
+        //$scope.map.markers.push($scope.ecuadorMarker);
 
-       
+        MarkerCreatorService.createByAddress($scope.address, function(marker) {
+                    $scope.map.markers.push(marker);
+                    refresh(marker);
+                });
         $scope.addAddress = function() {
             var address = $scope.address;
             if (address !== '') {

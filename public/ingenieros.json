@@ -1,7 +1,7 @@
 [
   {
     "id": "001",
-    "name": "Ingeniero000001",
+    "name": "Universidad Central del Ecuador Quito Ecuador",
     "ingenieria": "Ingenieria001",
     "type": [
       "Tipo1",
@@ -30,7 +30,7 @@
   },
   {
     "id": "002",
-    "name": "Ingeniero000002",
+    "name": "La Magdalena Quito Ecuador",
     "ingenieria": "Ingenieria001",
     "type": [
       "Tipo1",
@@ -59,7 +59,7 @@
   },
   {
     "id": "003",
-    "name": "Ingeniero000003",
+    "name": "12 de octubre y teniente ortiz",
     "ingenieria": "Ingenieria001",
     "type": [
       "Tipo1",
